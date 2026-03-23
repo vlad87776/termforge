@@ -1,13 +1,15 @@
 import os
 import shutil
+from core.utils import is_termforge_project
 
 def build_project():
     current_dir = os.getcwd()
     src_dir = os.path.join(current_dir, "src")
     dist_dir = os.path.join(current_dir, "dist")
 
-    if not os.path.exists(src_dir):
-        print("Error: src/ not found. Run this inside a TermForge project.")
+    if not is_termforge_project(current_dir):
+        print("Error: this is not a TermForge project.")
+        print("Missing app.json or src/")
         return
 
     if os.path.exists(dist_dir):
