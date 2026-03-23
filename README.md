@@ -271,4 +271,4 @@ Built in Termux on Android
 
 ## License
 
-No license has been added yet.
+This project is licensed under the Apache License 2.0.
